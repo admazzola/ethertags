@@ -1,0 +1,23 @@
+{
+  "name": "ethertags",
+  "version": "0.0.1",
+  "description": "A smart contract that allows accounts to publicly and permanently tag other accounts with 'badges' that have specific meaning on Ethereum.",
+  "main": "ethertags.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/admazzola/ethertags.git"
+  },
+  "keywords": [
+    "ethereum",
+    "tag"
+  ],
+  "author": "admazzola",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/admazzola/ethertags/issues"
+  },
+  "homepage": "https://github.com/admazzola/ethertags#readme"
+}
