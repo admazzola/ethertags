@@ -56,7 +56,11 @@ Any other Tag Type Id that is between 0x10 and 0xFF (including those two) is a c
 3. Then run 'testrpc' in a new tab to start an ethereum testnet
 
 
+## Dev Stuff
 
+https://medium.com/@tjayrush/zero-storage-data-publishing-on-ethereum-1e0610d846d
+https://ethereum.stackexchange.com/questions/3609/returning-a-struct-and-reading-via-web3
+https://github.com/ethereum/wiki/wiki/JavaScript-API#batch-requests
 
 ## Truffle Commands
 

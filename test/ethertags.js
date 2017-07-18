@@ -10,6 +10,25 @@ contract('EtherTags', function(accounts) {
       });
     });
 
+
+
+    it("should loop through all tag data", function() {
+
+      return EtherTags.deployed().then(function(instance) {
+
+        var state = web3.eth.getStorageAt(instance, 0);
+        return state;
+
+      }).then(function(state) {
+        assert.equal(state, 1, "10000 wasn't in the first account");
+      });
+
+
+    });
+
+
+
+
 /*  it("should put 10000 MetaCoin in the first account", function() {
     return MetaCoin.deployed().then(function(instance) {
       return instance.getBalance.call(accounts[0]);
