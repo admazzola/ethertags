@@ -31,42 +31,41 @@ contract EtherTags {
 
 	function EtherTags() {
 
+		/*
 		init_test_data = uint[]
 		init_test_data.push(2)
 		tags[tx.origin] = Tag({tagTypeId: 1, tagData: init_test_data})
+
+		*/
+
+
 		//balances[tx.origin] = 10000;  init stuff
 	}
+
+	/*
 
 	function giveTag(address receiver, uint8 tag_type_id, uint[] tag_data) returns(bool sufficient) {
 
 
-		/*if (balances[msg.sender] < amount) return false;
-		balances[msg.sender] -= amount;
-		balances[receiver] += amount;
-		Transfer(msg.sender, receiver, amount);
-		return true;
-		*/
+		//if (balances[msg.sender] < amount) return false;
+		//balances[msg.sender] -= amount;
+		//balances[receiver] += amount;
+		//Transfer(msg.sender, receiver, amount);
+		//return true;
+
 
 		existing_tags = tagList[msg.sender]
-		/*
-		--actually push the tag 
-		existing_tags.tags[ ].push
 
-		tagList[msg.sender] = amount;
-		*/
+		//--actually push the tag
+		//existing_tags.tags[ ].push
+
+		//tagList[msg.sender] = amount;
+
 		tagAssignment(msg.sender, receiver, tag_type_id, tag_data);
 		return true;
 
 	}
-
-	/*function getBalanceInEth(address addr) returns(uint){
-		return ConvertLib.convert(getBalance(addr),2);
-	}
-
-	function getBalance(address addr) returns(uint) {
-		return balances[addr];
-	}*/
-
+ 
 
 
 	function requestTag(address addr) returns(uint){
@@ -76,5 +75,7 @@ contract EtherTags {
 	function getTagData(address addr, uint8 tag_type_id) returns(uint) {
 		return balances[addr];
 	}
+
+	*/
 
 }

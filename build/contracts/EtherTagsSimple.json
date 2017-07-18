@@ -1,0 +1,17 @@
+{
+  "contract_name": "EtherTagsSimple",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "EtherTags",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    }
+  ],
+  "unlinked_binary": "0x60606040523415600b57fe5b5b605e8060196000396000f300606060405263ffffffff60e060020a6000350416633781f99481146020575bfe5b3415602757fe5b602d602f565b005b5b5600a165627a7a723058203fa3826f928885a77c5bad07b2df492482c5af55f126412fd212b27e951613660029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1500356427738
+}

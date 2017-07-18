@@ -1,0 +1,63 @@
+{
+  "contract_name": "EtherTags",
+  "abi": [
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_tag_type_id",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "name": "_tag_data",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "tagAssignment",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "_escrow_amt",
+          "type": "uint256"
+        }
+      ],
+      "name": "tagRequest",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x60606040523415600b57fe5b5b5b5b603380601b6000396000f30060606040525bfe00a165627a7a723058203c739f99676a6bd49a6bc6076902adcc4a366b33042508c872f20c2caaf9e45c0029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1500356525258
+}

@@ -1,6 +1,6 @@
-var EtherTags = artifacts.require("./EtherTags.sol");
+var EtherTags = artifacts.require("./EtherTagsSimple.sol");
 
-contract('EtherTags', function(accounts) {
+contract('EtherTagsSimple', function(accounts) {
 
 
 
