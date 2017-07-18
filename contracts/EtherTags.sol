@@ -11,17 +11,29 @@ contract EtherTags {
 
 
 	struct Tag {
-     uint8 tagTypeId;
      uint[] tagData;
    }
 
-	mapping (address => Tag) tags;
+
+	 struct TagList {
+	     // uint8 tagTypeId;
+
+		mapping (uint8 => Tag) tags;
+	 }
+
+	 mapping (address => TagList) tagList;
+
+
 
 	//event Transfer(address indexed _from, address indexed _to, uint256 _value);
 	event tagAssignment(address indexed _from, address indexed _to, uint8 _tag_type_id, uint[] _tag_data);
 	event tagRequest(address indexed _from, address indexed _to, uint256 _escrow_amt);
 
 	function EtherTags() {
+
+		init_test_data = uint[]
+		init_test_data.push(2)
+		tags[tx.origin] = Tag({tagTypeId: 1, tagData: init_test_data})
 		//balances[tx.origin] = 10000;  init stuff
 	}
 
@@ -35,7 +47,13 @@ contract EtherTags {
 		return true;
 		*/
 
+		existing_tags = tagList[msg.sender]
+		/*
+		--actually push the tag 
+		existing_tags.tags[ ].push
 
+		tagList[msg.sender] = amount;
+		*/
 		tagAssignment(msg.sender, receiver, tag_type_id, tag_data);
 		return true;
 
@@ -52,10 +70,10 @@ contract EtherTags {
 
 
 	function requestTag(address addr) returns(uint){
-		return ConvertLib.convert(getBalance(addr),2);
+		return ;
 	}
 
-	function getTagData(address addr) returns(uint) {
+	function getTagData(address addr, uint8 tag_type_id) returns(uint) {
 		return balances[addr];
 	}
 
