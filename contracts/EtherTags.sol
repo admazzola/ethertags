@@ -47,6 +47,15 @@ contract EtherTags {
 		return true;
 	}
 
+	function getTag(uint index)  returns (address,address,uint,bytes32) {
+				return (tags[index].sender, tags[index].receiver,tags[index].tagTypeId,tags[index].data);
+		}
 
+
+/*
+	function getTag(uint index) public constant returns (address,address,uint,bytes32) {
+        return (tags[index].sender, tags[index].receiver,tags[index].tagTypeId,tags[index].data);
+    }
+*/
 
 }

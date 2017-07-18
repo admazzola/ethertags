@@ -11,7 +11,7 @@ contract TestEtherTags {
 
     uint expected = 0;
 
-    Assert.equal(meta.tags[1].tagTypeId, 1, "should have tag");
+    Assert.equal(meta.getTag(1).tagTypeId, 1, "should have tag");
   }
 
 /*  function testInitialBalanceWithNewMetaCoin() {
