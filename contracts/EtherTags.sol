@@ -9,76 +9,43 @@ pragma solidity ^0.4.4;
 
 contract EtherTags {
 
+	struct Tag  {
+			 //a tag list is the list of all tags on an account X given by account Y
+				address sender;
+				address receiver;
+				uint tagTypeId;
 
-	struct Tag {
-     uint256[] tagData;
-   }
+				bytes32 data; //could be a hash of the actual data or data itself.
+	}
 
 
-	 struct TagList {
-	     // uint8 tagTypeId;
 
-		mapping (uint8 => Tag) tags;
-	 }
-
-	 mapping (address => TagList) tagList;
-
+	 uint public nextTagIndexToAssign = 0;
+	 mapping (uint => Tag) public tags;
 
 
 	//event Transfer(address indexed _from, address indexed _to, uint256 _value);
-	event tagAssignment(address indexed _from, address indexed _to, uint8 _tag_type_id, uint[] _tag_data);
-	event tagRequest(address indexed _from, address indexed _to, uint256 _escrow_amt);
+	event tagAssignment(address indexed _to, address indexed _from, uint _tag_type_id, bytes32 _tag_data);
+	event tagRequest(address indexed _to, address indexed _from, uint256 _escrow_amt);
 
 	function EtherTags() {
 
-		/*
-		init_test_data = uint[]
-		init_test_data.push(2)
-		tags[tx.origin] = Tag({tagTypeId: 1, tagData: init_test_data})
 
-		*/
+			 bytes32 init_test_data = bytes32(keccak256("helloworld"));
 
+				giveTag(tx.origin,0x1,init_test_data);
 
-		//balances[tx.origin] = 10000;  init stuff
+				//balances[tx.origin] = 10000;  init stuff
 	}
 
-	/*
+	function giveTag(address _receiver, uint _tag_type_id, bytes32 _tag_data) returns(bool sufficient) {
 
-	function giveTag(address receiver, uint8 tag_type_id, uint[] tag_data) returns(bool sufficient) {
+		nextTagIndexToAssign++;
+		tags[nextTagIndexToAssign] = Tag({sender:msg.sender, receiver:_receiver, tagTypeId:_tag_type_id, data:_tag_data  });
+		tagAssignment(_receiver, msg.sender, _tag_type_id, _tag_data);
 
-
-		//if (balances[msg.sender] < amount) return false;
-		//balances[msg.sender] -= amount;
-		//balances[receiver] += amount;
-		//Transfer(msg.sender, receiver, amount);
-		//return true;
-
-
-		existing_tags = tagList[msg.sender]
-
-		//--actually push the tag
-		//existing_tags.tags[ ].push
-
-		//tagList[msg.sender] = amount;
-
-		tagAssignment(msg.sender, receiver, tag_type_id, tag_data);
 		return true;
-
 	}
-
-
-*/
-
-	function requestTag(address addr) returns(uint){
-		return 1;
-	}
-
-	function getTagData(address addr, uint8 tag_type_id) returns(uint256[]) {
-		return tagList[addr].tags[tag_type_id].tagData;
-	}
-
-
-
 
 
 
