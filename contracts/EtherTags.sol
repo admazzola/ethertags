@@ -11,7 +11,7 @@ contract EtherTags {
 
 
 	struct Tag {
-     uint[] tagData;
+     uint256[] tagData;
    }
 
 
@@ -73,13 +73,11 @@ contract EtherTags {
 		return 1;
 	}
 
-	function getTagData(address addr, uint8 tag_type_id) returns(uint) {
-		return getTagDataList(addr).tags[tag_type_id];
+	function getTagData(address addr, uint8 tag_type_id) returns(uint256[]) {
+		return tagList[addr].tags[tag_type_id].tagData;
 	}
 
-	function getTagDataList(address addr) returns(TagList) {
-		return tagList[addr];
-	}
+
 
 
 
