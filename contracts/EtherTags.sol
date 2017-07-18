@@ -51,6 +51,9 @@ contract EtherTags {
 				return (tags[index].sender, tags[index].receiver,tags[index].tagTypeId,tags[index].data);
 		}
 
+		function getTagTypeId(uint index)  returns (uint) {
+					return (tags[index].tagTypeId);
+			}
 
 /*
 	function getTag(uint index) public constant returns (address,address,uint,bytes32) {

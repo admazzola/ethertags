@@ -9,9 +9,11 @@ contract TestEtherTags {
   function testInitialCreationDeployedContract() {
     EtherTags meta = EtherTags(DeployedAddresses.MetaCoin());
 
-    uint expected = 0;
+    //var first_tag = meta.getTag(1);
 
-    Assert.equal(meta.getTag(1).tagTypeId, 1, "should have tag");
+    Assert.equal(meta.nextTagIndexToAssign(), 1, "Initial tag should exist");
+
+
   }
 
 /*  function testInitialBalanceWithNewMetaCoin() {
