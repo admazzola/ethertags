@@ -1,8 +1,14 @@
-var EtherTags = artifacts.require("./EtherTagsSimple.sol");
+var EtherTags = artifacts.require("./EtherTags.sol");
 
-contract('EtherTagsSimple', function(accounts) {
+contract('EtherTags', function(accounts) {
 
-
+  it("should initialize the contract", function() {
+      return EtherTags.deployed().then(function(instance) {
+        return instance.getTagTypeId.call(1);
+      }).then(function(result) {
+        assert.equal(result, 1, "10000 wasn't in the first account");
+      });
+    });
 
 /*  it("should put 10000 MetaCoin in the first account", function() {
     return MetaCoin.deployed().then(function(instance) {
