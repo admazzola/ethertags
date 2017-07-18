@@ -65,17 +65,23 @@ contract EtherTags {
 		return true;
 
 	}
- 
 
+
+*/
 
 	function requestTag(address addr) returns(uint){
-		return ;
+		return 1;
 	}
 
 	function getTagData(address addr, uint8 tag_type_id) returns(uint) {
-		return balances[addr];
+		return getTagDataList(addr).tags[tag_type_id];
 	}
 
-	*/
+	function getTagDataList(address addr) returns(TagList) {
+		return tagList[addr];
+	}
+
+
+
 
 }
